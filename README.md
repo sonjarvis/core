@@ -2,7 +2,7 @@
 
 ## 김영한, 스프링 핵심 원리 - 기본편
 
-### 개발환경
+### 개발환경 
 Project: Gradle - Groovy Project
 
 Spring Boot: 3.4.1
