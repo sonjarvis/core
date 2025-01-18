@@ -9,10 +9,18 @@ import hello.core.member.MemoryMemberRepository;
 
 //주문 서비스 구현체
 public class OrderServiceImpl implements OrderService {
+    //OerderService는 결과만 나에게 전달해 => 단일체계원칙
+    //OerderService는 두개 필요(1. 회원을 찾아야함 2. 할인 정책)
 
-    private final MemberRepository memberRepository = new MemoryMemberRepository();
-//    private final DiscountPolicy discountPolicy = new FixDiscountPolicy();
-    private final DiscountPolicy discountPolicy = new RateDiscountPolicy();
+    // private final MemberRepository memberRepository = new MemoryMemberRepository();
+    // private final DiscountPolicy = new FixDiscountPolicy();
+    private final MemberRepository memberRepository;
+    private final DiscountPolicy discountPolicy;
+
+    public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
+        this.memberRepository = memberRepository;
+        this.discountPolicy = discountPolicy;
+    }
 
     @Override
     public Order createOrder(Long memberId, String itemName, int itemPrice) {

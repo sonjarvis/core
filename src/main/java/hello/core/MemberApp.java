@@ -10,7 +10,10 @@ public class MemberApp {
 
     //자동완성 psvm
     public static void main(String[] args) {
-        MemberService memberService = new MemberServiceImpl();
+        AppConfig appConfig = new AppConfig();
+        MemberService memberService = appConfig.memberService();
+
+//        MemberService memberService = new MemberServiceImpl();
         Member member = new Member(1L, "MemberA", Grade.VIP);
         memberService.join(member);
 
