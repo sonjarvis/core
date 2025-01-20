@@ -31,6 +31,7 @@ public class AppConfig {
     //call AppConfig.memberRepository
     //call AppConfig.orderService
 
+
     @Bean
     public MemberService memberService(){
         System.out.println("call AppConfig.memberService");
