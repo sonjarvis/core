@@ -3,9 +3,13 @@ package hello.core.order;
 import hello.core.discount.DiscountPolicy;
 import hello.core.member.Member;
 import hello.core.member.MemberRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
-//주문 서비스 구현체
+
+@Component
 public class OrderServiceImpl implements OrderService {
+    //주문 서비스 구현체
     //OerderService는 결과만 나에게 전달해 => 단일체계원칙
     //OerderService는 두개 필요(1. 회원을 찾아야함 2. 할인 정책)
 
@@ -14,6 +18,7 @@ public class OrderServiceImpl implements OrderService {
     private final MemberRepository memberRepository;
     private final DiscountPolicy discountPolicy;
 
+    @Autowired
     public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
         this.memberRepository = memberRepository;
         this.discountPolicy = discountPolicy;
