@@ -48,6 +48,24 @@ public class ApplicationContextSameBeanFindTest {
     @Configuration
     static class SameBeanConfig {
 
+        /*@Bean
+        public OrderService orderService(){
+            System.out.println("call AppConfig.orderService");
+            return new OrderServiceImpl(memberRepository(), discountPolicy()); //생성자 주입*
+//        return null;
+        }*/
+
+        @Bean
+        public MemberService memberService(){
+            System.out.println("call AppConfig.memberService");
+            return new MemberServiceImpl(memberRepository()); //구현체 객
+        }
+
+        private MemberRepository memberRepository() {
+            return null;
+        }
+
+
         @Bean
         public MemberRepository memberRepository1() {
             return new MemoryMemberRepository();

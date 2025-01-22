@@ -15,7 +15,7 @@ Java: 17
 
 IDE : IntelliJ
 
-단위테스트 : JUnit
+단위테스트 : JUnit5
 
 
 

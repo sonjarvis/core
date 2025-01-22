@@ -9,7 +9,7 @@ public class Order {
     private int discountPrice;
 
     //constructor
-    public Order(Long memberId, String itemName, int itemPrice, int discountPrice) {
+    public Order(long memberId, String itemName, int itemPrice, int discountPrice) {
         this.memberId = memberId;
         this.itemName = itemName;
         this.itemPrice = itemPrice;
