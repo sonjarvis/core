@@ -3,7 +3,7 @@ package hello.core.order;
 public class Order {
 
     //주문, 할인 엔티티
-    private Long memberId;
+    private long memberId;
     private String itemName;
     private int itemPrice;
     private int discountPrice;
