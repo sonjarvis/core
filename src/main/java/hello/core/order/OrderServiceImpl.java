@@ -1,14 +1,15 @@
 package hello.core.order;
 
+import hello.core.annotation.MainDiscountPolicy;
 import hello.core.discount.DiscountPolicy;
 import hello.core.member.Member;
 import hello.core.member.MemberRepository;
-import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 
 @Component
-@RequiredArgsConstructor
+
 public class OrderServiceImpl implements OrderService {
     //주문 서비스 구현체
     //OerderService는 결과만 나에게 전달해 => 단일체계원칙
@@ -18,6 +19,13 @@ public class OrderServiceImpl implements OrderService {
     // private final DiscountPolicy = new FixDiscountPolicy();
     private final MemberRepository memberRepository;
     private final DiscountPolicy discountPolicy;
+
+
+    @Autowired
+    public OrderServiceImpl(MemberRepository memberRepository, @MainDiscountPolicy DiscountPolicy discountPolicy) {
+        this.memberRepository = memberRepository;
+        this.discountPolicy = discountPolicy;
+    }
 
     @Override
     public Order createOrder(long memberId, String itemName, int itemPrice) {

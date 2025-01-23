@@ -3,7 +3,7 @@ package hello.core.member;
 public class Member {
 
     //회원 엔티티
-    private Long id;
+    private long id;
     private String name;
     private Grade grade;
 
@@ -20,7 +20,7 @@ public class Member {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(long id) {
         this.id = id;
     }
 
